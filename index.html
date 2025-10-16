@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Validar Cédula Dominicana</title>
+  <title>Validar Cedula Dominicana</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -36,8 +36,8 @@
 </head>
 <body>
   <div class="container">
-    <h2>Validador de Cédula Dominicana</h2>
-    <input type="text" id="cedula" placeholder="Ingrese su cédula (sin guiones)">
+    <h2>Validador de Cedula Dominicana</h2>
+    <input type="text" id="cedula" placeholder="Ingrese su cedula (sin guiones)">
     <button onclick="validarCedula()">Validar</button>
     <div id="resultado"></div>
   </div>
@@ -47,15 +47,14 @@
       let cedula = document.getElementById("cedula").value.trim();
       let resultado = document.getElementById("resultado");
 
-      // Validar que tenga 11 dígitos numéricos
       if (!/^\d{11}$/.test(cedula)) {
-        resultado.innerHTML = "❌ CÉDULA INCORRECTA (Debe tener 11 números)";
+        resultado.innerHTML = "Cedula incorreta (Debe tener 11 numeros)";
         resultado.style.color = "red";
         return;
       }
 
       let suma = 0;
-      let multiplo = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]; // patrón de multiplicación
+      let multiplo = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]; 
       let digitoVerificador = parseInt(cedula[10]);
 
       for (let i = 0; i < 10; i++) {
@@ -68,10 +67,10 @@
       let verificadorCalculado = (resto === 0) ? 0 : 10 - resto;
 
       if (verificadorCalculado === digitoVerificador) {
-        resultado.innerHTML = "✅ CÉDULA CORRECTA";
+        resultado.innerHTML = "Cedula Correcta";
         resultado.style.color = "green";
       } else {
-        resultado.innerHTML = "❌ CÉDULA INCORRECTA";
+        resultado.innerHTML = "Cedula Incorrecta";
         resultado.style.color = "red";
       }
     }
